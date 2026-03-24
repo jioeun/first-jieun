@@ -4,57 +4,57 @@ import { Button } from '@/components/ui/button';
 
 const certificates = [
   {
-    title: 'AWS Certified Solutions Architect',
-    issuer: 'Amazon Web Services',
+    title: '1st Place Speech Competition - MARSSAL 8',
+    issuer: 'MARSSAL 8',
+    date: '2022',
+    credentialId: 'MARSSAL8-1ST-2022',
+    image: '🥇',
+    color: 'from-yellow-400/20 to-orange-400/20',
+    link: '#',
+  },
+  {
+    title: '2nd Place Speech Competition - COMET 1',
+    issuer: 'COMET 1',
+    date: '2022',
+    credentialId: 'COMET1-2ND-2022',
+    image: '🥈',
+    color: 'from-gray-400/20 to-slate-400/20',
+    link: '#',
+  },
+  {
+    title: '3rd Place Speech Competition - COMET 3',
+    issuer: 'COMET 3',
     date: '2024',
-    credentialId: 'AWS-SAA-123456',
-    image: '🏆',
-    color: 'from-orange-500/20 to-yellow-500/20',
+    credentialId: 'COMET3-3RD-2024',
+    image: '🥉',
+    color: 'from-orange-400/20 to-amber-400/20',
     link: '#',
   },
   {
-    title: 'Google Professional Cloud Developer',
-    issuer: 'Google Cloud',
-    date: '2023',
-    credentialId: 'GCP-PCD-789012',
-    image: '☁️',
-    color: 'from-blue-500/20 to-cyan-500/20',
-    link: '#',
-  },
-  {
-    title: 'Meta Front-End Developer',
-    issuer: 'Meta (Coursera)',
-    date: '2023',
-    credentialId: 'META-FE-345678',
-    image: '⚛️',
-    color: 'from-blue-600/20 to-indigo-500/20',
-    link: '#',
-  },
-  {
-    title: 'MongoDB Certified Developer',
-    issuer: 'MongoDB University',
-    date: '2023',
-    credentialId: 'MDB-DEV-901234',
-    image: '🍃',
-    color: 'from-green-500/20 to-emerald-500/20',
-    link: '#',
-  },
-  {
-    title: 'Certified Kubernetes Administrator',
-    issuer: 'CNCF',
+    title: 'Best Student Award - MIN Model',
+    issuer: 'MIN Model',
     date: '2022',
-    credentialId: 'CKA-567890',
-    image: '⚙️',
-    color: 'from-indigo-500/20 to-purple-500/20',
+    credentialId: 'MINMODEL-BEST-2022',
+    image: '🏅',
+    color: 'from-green-400/20 to-emerald-400/20',
     link: '#',
   },
   {
-    title: 'Professional Scrum Master I',
-    issuer: 'Scrum.org',
-    date: '2022',
-    credentialId: 'PSM-I-234567',
+    title: 'Best Student Award - MTsN Model',
+    issuer: 'MTsN Model',
+    date: '2025',
+    credentialId: 'MTSNMODEL-BEST-2025',
+    image: '🎓',
+    color: 'from-blue-400/20 to-indigo-400/20',
+    link: '#',
+  },
+  {
+    title: 'Head of Science & Technology Division (OSIM)',
+    issuer: 'OSIM Organization',
+    date: '2024/2025',
+    credentialId: 'OSIM-IPTEK-CHAIR-2025',
     image: '📋',
-    color: 'from-teal-500/20 to-cyan-500/20',
+    color: 'from-purple-400/20 to-pink-400/20',
     link: '#',
   },
 ];
@@ -70,9 +70,9 @@ export default function CertificatesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium mb-2 block">Kredensial</span>
+          <span className="text-primary font-medium mb-2 block">Credentials</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-            Sertifikat &amp; Lisensi
+            Certificates &amp; Achievements
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
@@ -116,7 +116,7 @@ export default function CertificatesSection() {
                   <Button variant="outline" size="sm" className="rounded-full mt-2" asChild>
                     <a href={cert.link} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-4 w-4 mr-1" />
-                      Verifikasi
+                      Verify
                     </a>
                   </Button>
                 </div>
