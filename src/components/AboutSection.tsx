@@ -1,17 +1,40 @@
-import { motion } from 'framer-motion';
-import { Code2, Video, Coffee, Rocket } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { Code2, Video, Coffee, Rocket, ChevronDown } from 'lucide-react';
 
 export default function AboutSection() {
+  const [openIndex, setOpenIndex] = useState(0); // auto open pertama
+
   const stats = [
-    { icon: Code2, value: '50+', label: 'Projects Selesai' },
-    { icon: Video, value: '100+', label: 'Video Konten' },
-    { icon: Coffee, value: '1000+', label: 'Cangkir Kopi' },
-    { icon: Rocket, value: '5+', label: 'Tahun Pengalaman' },
+    { icon: Code2, value: 'Beginner', label: 'Learning Coding' },
+    { icon: Video, value: 'Creative', label: 'Content & Editing' },
+    { icon: Coffee, value: 'Active', label: 'Organization' },
+    { icon: Rocket, value: 'Growing', label: 'Public Speaking' },
+  ];
+
+  const accordionData = [
+    {
+      title: 'About Me',
+      content:
+        'I am a student who is passionate about technology, art, and public speaking. Since middle school, I have been actively involved in student organizations (OSIM), where I developed leadership, teamwork, and responsibility. I also enjoy participating in speech and debate competitions, which have helped me build confidence and improve my communication skills. I love exploring new ideas and continuously growing both creatively and intellectually.',
+    },
+    {
+      title: 'My Interests',
+      content:
+        'I have a strong interest in creative and digital activities such as photography, photo and video editing, and drawing. These hobbies allow me to express my ideas visually and improve my creativity. I also enjoy being involved in organizational activities and public speaking, as they help me grow my confidence, communication skills, and ability to work with others.',
+    },
+    {
+      title: 'Currently Learning',
+      content:
+        'Right now, I am learning coding and building my foundation in web development while continuing to grow in creativity and communication.',
+    },
   ];
 
   return (
     <section id="about" className="py-20 md:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
+
+        {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -19,14 +42,16 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium mb-2 block">Tentang Saya</span>
+          <span className="text-primary font-medium mb-2 block">About Me</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-            Mengenal Lebih Dekat
+            Get to Know Me
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+
+          {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -34,18 +59,17 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden glass shadow-card">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <span className="text-8xl">👨‍💻</span>
-                </div>
+              <div className="aspect-square rounded-2xl overflow-hidden glass shadow-card flex items-center justify-center text-7xl">
+                🎨
               </div>
               <div className="absolute -bottom-6 -right-6 p-4 glass rounded-xl shadow-card">
-                <p className="font-display font-bold text-2xl text-gradient">5+ Tahun</p>
-                <p className="text-sm text-muted-foreground">Pengalaman</p>
+                <p className="font-display font-bold text-xl text-gradient">Student</p>
+                <p className="text-sm text-muted-foreground">Learning & Growing</p>
               </div>
             </div>
           </motion.div>
 
+          {/* RIGHT */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -54,19 +78,69 @@ export default function AboutSection() {
             className="space-y-6"
           >
             <h3 className="font-display text-2xl md:text-3xl font-bold">
-              Passionate Developer &amp; Creator
+              Creative & Tech Enthusiast
             </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Saya adalah seorang Fullstack Web Developer dengan passion yang kuat dalam menciptakan 
-              solusi digital yang inovatif. Dengan pengalaman lebih dari 5 tahun, saya telah 
-              membantu berbagai klien dan perusahaan dalam mewujudkan ide-ide mereka menjadi 
-              aplikasi web yang powerful dan user-friendly.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Selain coding, saya juga aktif sebagai Content Creator, berbagi pengetahuan 
-              tentang pemrograman dan teknologi melalui berbagai platform. Saya percaya bahwa 
-              berbagi ilmu adalah cara terbaik untuk terus belajar dan berkembang.
-            </p>
+
+            {/* ACCORDION */}
+            <div className="space-y-4">
+              {accordionData.map((item, index) => {
+                const isOpen = openIndex === index;
+
+                return (
+                  <motion.div
+                    key={index}
+                    layout
+                    className={`rounded-xl overflow-hidden transition-all duration-300
+                      ${
+                        isOpen
+                          ? 'bg-gradient-to-r from-primary/20 via-purple-500/20 to-indigo-500/20 shadow-[0_0_25px_rgba(99,102,241,0.4)] border border-primary/30'
+                          : 'glass'
+                      }`}
+                  >
+                    {/* HEADER */}
+                    <button
+                      onClick={() =>
+                        setOpenIndex(isOpen ? null : index)
+                      }
+                      className="w-full flex items-center justify-between p-4 text-left"
+                    >
+                      <span
+                        className={`font-medium transition ${
+                          isOpen ? 'text-primary' : ''
+                        }`}
+                      >
+                        {item.title}
+                      </span>
+
+                      <motion.div
+                        animate={{ rotate: isOpen ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                        className={isOpen ? 'text-primary' : ''}
+                      >
+                        <ChevronDown />
+                      </motion.div>
+                    </button>
+
+                    {/* CONTENT */}
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="px-4 pb-4 text-muted-foreground"
+                        >
+                          {item.content}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* STATS */}
             <div className="grid grid-cols-2 gap-4 pt-4">
               {stats.map((stat, index) => (
                 <motion.div
@@ -78,12 +152,13 @@ export default function AboutSection() {
                   className="p-4 glass rounded-xl text-center hover:shadow-card-hover transition-shadow"
                 >
                   <stat.icon className="h-6 w-6 text-primary mx-auto mb-2" />
-                  <p className="font-display text-2xl font-bold">{stat.value}</p>
+                  <p className="font-display text-lg font-bold">{stat.value}</p>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
