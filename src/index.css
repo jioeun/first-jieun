@@ -6,99 +6,151 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 220 20% 10%;
+    /* 🌈 COLORFUL SCRAPBOOK LIGHT */
+    --background: 35 70% 96%;
+    --foreground: 20 25% 25%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card: 35 50% 98%;
+    --card-foreground: 20 25% 25%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover: 35 50% 98%;
+    --popover-foreground: 20 25% 25%;
 
-    --primary: 175 80% 40%;
+    --primary: 345 75% 75%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 92%;
-    --secondary-foreground: 220 20% 20%;
+    --secondary: 120 30% 70%;
+    --secondary-foreground: 120 25% 20%;
 
-    --muted: 195 53% 79%;
-    --muted-foreground: 190 50% 10%;
+    --accent: 45 90% 70%;
+    --accent-foreground: 35 40% 25%;
 
-    --accent: 175 80% 45%;
-    --accent-foreground: 0 0% 100%;
+    --pink: 345 75% 75%;
+    --peach: 20 80% 75%;
+    --yellow: 45 90% 70%;
+    --green: 120 30% 70%;
+    --blue: 200 70% 75%;
+    --purple: 270 60% 75%;
 
-    --destructive: 0 84% 60%;
+    --muted: 35 40% 88%;
+    --muted-foreground: 30 20% 40%;
+
+    --destructive: 0 70% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 175 80% 40%;
+    --border: 35 30% 80%;
+    --input: 35 30% 85%;
+    --ring: 345 75% 75%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Custom tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(175 80% 40%), hsl(200 80% 50%));
-    --gradient-hero: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(210 25% 94%) 100%);
-    --navbg: linear-gradient(180deg, hsl(314 100% 80%) 0%, hsl(0% 0% 100%) 100%);
-    --shadow-glow: 0 0 40px hsl(175 80% 40% / 0.3);
-    --shadow-card: 0 4px 20px hsl(220 20% 10% / 0.08);
-    --shadow-card-hover: 0 8px 30px hsl(220 20% 10% / 0.12);
+    --gradient-primary: linear-gradient(
+      135deg,
+       hsl(var(--pink) / 0.7),
+       hsl(var(--peach) / 0.7),
+       hsl(var(--blue) / 0.7),
+       hsl(var(--yellow) / 0.6)
+    );
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 175 80% 40%;
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(35 70% 96%) 0%,
+      hsl(45 80% 90%) 100%
+    );
+
+    --notebook-lines: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 28px,
+      rgba(0,0,0,0.05) 29px
+    );
+
+    --color-splash: 
+      radial-gradient(circle at 20% 20%, hsl(var(--pink) / 0.15), transparent 40%),
+      radial-gradient(circle at 80% 30%, hsl(var(--blue) / 0.15), transparent 40%),
+      radial-gradient(circle at 40% 80%, hsl(var(--green) / 0.15), transparent 40%),
+      radial-gradient(circle at 70% 70%, hsl(var(--purple) / 0.12), transparent 40%);
+
+    --navbg: linear-gradient(
+      180deg,
+      hsl(var(--pink)) 0%,
+      hsl(var(--yellow)) 100%
+    );
+
+    --shadow-glow: 0 0 50px hsl(var(--pink) / 0.4);
+    --shadow-card: 0 10px 30px hsl(20 20% 20% / 0.1);
+    --shadow-card-hover: 0 15px 50px hsl(20 20% 20% / 0.2);
+
+    --sidebar-background: 35 50% 95%;
+    --sidebar-foreground: 20 25% 25%;
+    --sidebar-primary: 345 75% 75%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 40% 90%;
+    --sidebar-accent-foreground: 20 25% 25%;
+    --sidebar-border: 35 30% 80%;
+    --sidebar-ring: 345 75% 75%;
   }
 
   .dark {
-    --background: 220 25% 6%;
-    --foreground: 210 20% 98%;
+    --background: 25 20% 12%;
+    --foreground: 35 40% 90%;
 
-    --card: 220 25% 10%;
-    --card-foreground: 210 20% 98%;
+    --card: 25 20% 18%;
+    --card-foreground: 35 40% 90%;
 
-    --popover: 220 25% 10%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 25 20% 18%;
+    --popover-foreground: 35 40% 90%;
 
-    --primary: 175 80% 50%;
-    --primary-foreground: 220 25% 6%;
+    --primary: 345 75% 75%;
+    --primary-foreground: 25 20% 12%;
 
-    --secondary: 220 20% 18%;
-    --secondary-foreground: 210 20% 90%;
+    --secondary: 120 30% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 195 100% 15%;
-    --muted-foreground: 180 100% 50%;
+    --accent: 45 80% 65%;
+    --accent-foreground: 25 20% 12%;
 
-    --accent: 175 80% 50%;
-    --accent-foreground: 220 25% 6%;
+    --muted: 25 15% 30%;
+    --muted-foreground: 35 20% 70%;
 
-    --destructive: 0 70% 50%;
+    --destructive: 0 60% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 18%;
-    --ring: 175 80% 50%;
+    --border: 25 15% 30%;
+    --input: 25 15% 30%;
+    --ring: 345 75% 75%;
 
-    /* Custom tokens dark */
-    --gradient-primary: linear-gradient(135deg, hsl(175 80% 50%), hsl(200 80% 60%));
-    --gradient-hero: linear-gradient(180deg, hsl(220 25% 6%) 0%, hsl(220 30% 10%) 100%);
-    --navbg: linear-gradient(180deg, hsl(290 73% 52%) 0%, hsl(300% 2% 17%) 100%);
-    --shadow-glow: 0 0 60px hsl(175 80% 50% / 0.4);
-    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
-    --shadow-card-hover: 0 8px 30px hsl(175 80% 50% / 0.15);
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--pink)),
+      hsl(var(--purple)),
+      hsl(var(--blue))
+    );
 
-    --sidebar-background: 220 25% 8%;
-    --sidebar-foreground: 210 20% 90%;
-    --sidebar-primary: 175 80% 50%;
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(25 20% 12%) 0%,
+      hsl(25 20% 18%) 100%
+    );
+
+    --navbg: linear-gradient(
+      180deg,
+      hsl(var(--purple)) 0%,
+      hsl(25 20% 12%) 50%
+    );
+
+    --shadow-glow: 0 0 60px hsl(var(--pink) / 0.5);
+    --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.5);
+    --shadow-card-hover: 0 15px 60px hsl(var(--pink) / 0.25);
+
+    --sidebar-background: 25 20% 15%;
+    --sidebar-foreground: 35 40% 85%;
+    --sidebar-primary: 345 75% 75%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 20% 15%;
-    --sidebar-accent-foreground: 210 20% 90%;
-    --sidebar-border: 220 20% 18%;
-    --sidebar-ring: 175 80% 50%;
+    --sidebar-accent: 25 15% 25%;
+    --sidebar-accent-foreground: 35 40% 85%;
+    --sidebar-border: 25 15% 30%;
+    --sidebar-ring: 345 75% 75%;
   }
 }
 
@@ -108,8 +160,11 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
+
+    background-color: hsl(var(--background));
+    background-image: var(--notebook-lines), var(--color-splash);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -125,7 +180,6 @@
 
   .bg-navbg {
     background: var(--navbg);
-
   }
 
   .bg-gradient-hero {
@@ -144,12 +198,35 @@
     box-shadow: var(--shadow-card-hover);
   }
 
+  /* 🏷️ NAV TITLE (SUDAH DITAMBAHKAN) */
+  .nav-title {
+    @apply px-4 py-1 rounded-xl shadow-card font-semibold;
+    background: white;
+    color: #4B3F3A;
+  }
+
+  /* 🧾 SCRAPBOOK CARD */
+  .scrap-card {
+    @apply bg-card p-4 rounded-2xl shadow-card backdrop-blur-md border border-border/50;
+    transform: rotate(-2deg);
+    transition: all 0.3s ease;
+  }
+
+  .scrap-card:nth-child(2n) {
+    transform: rotate(2deg);
+  }
+
+  .scrap-card:hover {
+    transform: rotate(0deg) scale(1.05);
+    @apply shadow-card-hover;
+  }
+
   .glass {
-    @apply bg-card/80 backdrop-blur-lg border border-border/50;
+    @apply bg-card/70 backdrop-blur-xl border border-border/40;
   }
 
   .glass-strong {
-    @apply bg-card/95 backdrop-blur-xl border border-border;
+    @apply bg-card/90 backdrop-blur-2xl border border-border;
   }
 }
 
@@ -167,20 +244,12 @@
   }
 
   @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
 
   @keyframes pulse-glow {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.7;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
   }
 }
