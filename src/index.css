@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -16,7 +16,7 @@
     --popover: 35 50% 98%;
     --popover-foreground: 20 25% 25%;
 
-    --primary: 345 75% 75%;
+    --primary: 345 75% 75%; 
     --primary-foreground: 0 0% 100%;
 
     --secondary: 120 30% 70%;
@@ -29,7 +29,7 @@
     --peach: 20 80% 75%;
     --yellow: 45 90% 70%;
     --green: 120 30% 70%;
-    --blue: 200 70% 75%;
+    --blue: 200 70% 65%;
     --purple: 270 60% 75%;
 
     --muted: 35 40% 88%;
@@ -46,10 +46,10 @@
 
     --gradient-primary: linear-gradient(
       135deg,
-       hsl(var(--pink) / 0.7),
-       hsl(var(--peach) / 0.7),
-       hsl(var(--blue) / 0.7),
-       hsl(var(--yellow) / 0.6)
+      hsl(var(--pink) / 0.7),
+      hsl(var(--peach) / 0.7),
+      hsl(var(--blue) / 0.7),
+      hsl(var(--yellow) / 0.6)
     );
 
     --gradient-hero: linear-gradient(
@@ -136,7 +136,7 @@
     --navbg: linear-gradient(
       180deg,
       hsl(var(--purple)) 0%,
-      hsl(25 20% 12%) 50%
+      hsl(25 20% 12%) 100%
     );
 
     --shadow-glow: 0 0 60px hsl(var(--pink) / 0.5);
@@ -157,18 +157,17 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: 'Patrick Hand', cursive; /* ✨ Semua teks scrapbook font */
   }
 
   body {
-    @apply text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
-
+    @apply text-foreground antialiased;
     background-color: hsl(var(--background));
     background-image: var(--notebook-lines), var(--color-splash);
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Patrick Hand', cursive;
   }
 }
 
@@ -198,18 +197,18 @@
     box-shadow: var(--shadow-card-hover);
   }
 
-  /* 🏷️ NAV TITLE (SUDAH DITAMBAHKAN) */
   .nav-title {
     @apply px-4 py-1 rounded-xl shadow-card font-semibold;
     background: white;
     color: #4B3F3A;
+    font-family: 'Patrick Hand', cursive;
   }
 
-  /* 🧾 SCRAPBOOK CARD */
   .scrap-card {
     @apply bg-card p-4 rounded-2xl shadow-card backdrop-blur-md border border-border/50;
     transform: rotate(-2deg);
     transition: all 0.3s ease;
+    font-family: 'Patrick Hand', cursive;
   }
 
   .scrap-card:nth-child(2n) {
@@ -223,10 +222,12 @@
 
   .glass {
     @apply bg-card/70 backdrop-blur-xl border border-border/40;
+    font-family: 'Patrick Hand', cursive;
   }
 
   .glass-strong {
     @apply bg-card/90 backdrop-blur-2xl border border-border;
+    font-family: 'Patrick Hand', cursive;
   }
 }
 
