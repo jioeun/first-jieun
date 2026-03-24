@@ -10,7 +10,7 @@ const projects = [
     tags: ['Art', 'Drawing'],
     image: '🎨',
     color: 'from-purple-500/20 to-pink-500/20',
-    ArtPortfolio: '#',
+    link: '#',
   },
   {
     title: 'Photography',
@@ -18,17 +18,16 @@ const projects = [
     tags: ['Photo', 'Visual'],
     image: '📸',
     color: 'from-blue-500/20 to-cyan-500/20',
-    demo: '#',
+    link: '#',
   },
   {
     title: 'Editing Projects',
-    description: 'Creative photo and video editing works.',
+    description: 'Creative video editing works.',
     tags: ['Editing', 'Creative'],
     image: '🎬',
     color: 'from-orange-500/20 to-red-500/20',
-    youtube: '#',
+    link: 'https://youtu.be/33JTH6VD9rw?si=g179IvApAIZDhBqP',
   },
- 
 ];
 
 export default function ProjectsSection() {
@@ -135,7 +134,11 @@ export default function ProjectsSection() {
                 </div>
 
                 <Button size="sm" className="rounded-full w-full" asChild>
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={project.link || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <ExternalLink className="h-4 w-4 mr-1" />
                     View
                   </a>
