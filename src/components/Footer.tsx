@@ -6,7 +6,7 @@ export default function Footer() {
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com/jioeun', label: 'GitHub' },
-    { icon: Instagram, href: '#https://www.instagram.com/jiann_frs/', label: 'Instagram' },
+    { icon: Instagram, href: 'https://www.instagram.com/jiann_frs/', label: 'Instagram' },
   ];
 
   return (
