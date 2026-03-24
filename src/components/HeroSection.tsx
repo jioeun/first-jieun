@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'; 
 import { ArrowDown, Github, Linkedin, Youtube, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ThreeScene from './ThreeScene';
@@ -10,6 +10,11 @@ export default function HeroSection() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const socialLinks = [
+    { icon: Github, href: 'https://github.com/jioeun', label: 'GitHub' },
+    { icon: Instagram, href: 'https://instagram.com/jiann_frs', label: 'Instagram' },
+  ];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
@@ -30,18 +35,15 @@ export default function HeroSection() {
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 4, repeat: Infinity }}
             >
-              {/* GLOW BACKGROUND */}
               <div className="absolute inset-0 rounded-full blur-2xl opacity-60 
                 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 
                 group-hover:opacity-80 transition duration-500"
               />
 
-              {/* RING GLOW */}
               <div className="absolute inset-0 rounded-full border-2 border-white/20 
                 shadow-[0_0_40px_rgba(255,255,255,0.3)]"
               />
 
-              {/* FOTO */}
               <img
                 src="/DSC00121.JPG"
                 alt="Profile"
@@ -59,7 +61,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
             >
-              👋 Selamat datang di portfolio saya
+              Welcome to My Portfolio
             </motion.span>
 
             <motion.h1
@@ -68,9 +70,9 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
             >
-              Fullstack Developer
+              Student
               <br />
-              <span className="text-gradient">&amp; Content Creator</span>
+              <span className="text-gradient"> Tech & Creative Enthusiast</span>
             </motion.h1>
 
             <motion.p
@@ -79,8 +81,8 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl"
             >
-              Saya membangun aplikasi web yang indah dan fungsional, 
-              serta membagikan pengetahuan melalui konten yang inspiratif.
+              I enjoy exploring technology, and art. 
+              Passionate about photography, editing, drawing, and currently learning to code.
             </motion.p>
 
             <motion.div
@@ -97,7 +99,7 @@ export default function HeroSection() {
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Lihat Projects
+                View Projects
               </Button>
               <Button 
                 variant="outline" 
@@ -108,33 +110,35 @@ export default function HeroSection() {
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Hubungi Saya
+                Contact Me
               </Button>
             </motion.div>
 
+            {/* SOCIAL ICONS */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
               className="flex items-center justify-center lg:justify-start gap-6"
             >
-              {[
-                { icon: Github, href: '#', label: 'GitHub' },
-                { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                { icon: Youtube, href: '#', label: 'YouTube' },
-                { icon: Instagram, href: '#', label: 'Instagram' },
-              ].map((social) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  className="p-3 rounded-full glass hover:shadow-glow transition-all duration-300"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  aria-label={social.label}
-                >
-                  <social.icon className="h-5 w-5 text-foreground" />
-                </motion.a>
-              ))}
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+
+                return (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-full glass hover:shadow-glow transition-all duration-300"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label={social.label}
+                  >
+                    <Icon className="h-5 w-5 text-foreground" />
+                  </motion.a>
+                );
+              })}
             </motion.div>
           </div>
         </div>
@@ -149,6 +153,6 @@ export default function HeroSection() {
       >
         <ArrowDown className="h-5 w-5 text-primary" />
       </motion.button>
-  </section>
+    </section>
   );
 }
