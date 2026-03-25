@@ -59,8 +59,11 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative">
-              <div className="src=/pfp.PNG w-full rounded-2xl shadow-lg" />
-              </div>
+              <img 
+                 src="/pfp.PNG"
+                 alt="profile"
+                 className="w-full rounded-2xl shadow-lg"
+              />
               <div className="absolute -bottom-6 -right-6 p-4 glass rounded-xl shadow-card">
                 <p className="font-display font-bold text-xl text-gradient">Student</p>
                 <p className="text-sm text-muted-foreground">Learning & Growing</p>
