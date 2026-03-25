@@ -59,8 +59,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden glass shadow-card flex items-center justify-center text-7xl">
-                🎨
+              <div className="src=/pfp.PNG w-full rounded-2xl shadow-lg" />
               </div>
               <div className="absolute -bottom-6 -right-6 p-4 glass rounded-xl shadow-card">
                 <p className="font-display font-bold text-xl text-gradient">Student</p>
