@@ -10,7 +10,7 @@ const projects = [
     tags: ['Art', 'Drawing'],
     image: '🎨',
     color: 'from-purple-500/20 to-pink-500/20',
-    link: '#',
+    link: 'https://art-portfolio-jieunz.vercel.app/',
   },
   {
     title: 'Photography',
