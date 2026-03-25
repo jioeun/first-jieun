@@ -63,7 +63,7 @@ export default function ProjectsSection() {
 
         {/* HEADER */}
         <div className="text-center mb-16">
-          <span className="text-primary font-medium mb-2 block">Portfolio</span>
+          <span className="text-primary font-medium mb-2 block">Projects</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
             Projects & Karya
           </h2>
