@@ -28,27 +28,37 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-full lg:w-1/2 flex justify-center"
+            className="w-full lg:w-1/2 flex justify-start"
           >
             <motion.div
               className="relative group"
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 4, repeat: Infinity }}
             >
-              <div className="absolute inset-0 rounded-full blur-2xl opacity-60 
+              <div className="absolute inset-0 blur-2xl opacity-60 
                 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 
                 group-hover:opacity-80 transition duration-500"
+                style={{
+                  clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
+                }}
               />
 
-              <div className="absolute inset-0 rounded-full border-2 border-white/20 
+              <div 
+                className="absolute inset-0 border-2 border-white/20 
                 shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+                style={{
+                  clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
+                }}
               />
 
               <img
                 src="/DSC00121.JPG"
                 alt="Profile"
-                className="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full 
+                className="relative w-64 h-64 md:w-80 md:h-80 object-cover 
                 shadow-xl border-4 border-white/20 z-10"
+                style={{
+                  clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
+                }}
               />
             </motion.div>
           </motion.div>
