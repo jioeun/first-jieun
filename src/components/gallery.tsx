@@ -3,10 +3,16 @@ import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const photos = [
-  { image: '/DSC0001.jpg', location: 'Banda Aceh', tag: 'Nature' },
-  { image: '/photos/photo2.jpg', location: 'Seaside', tag: 'Nature' },
-  { image: '/photos/photo3.jpg', location: 'Quiet Forest', tag: 'Nature' },
-  { image: '/photos/photo4.jpg', location: 'Countryside', tag: 'Nature' },
+  { image: '/foto1.JPG', location: 'Sabang', tag: 'Nature' },
+  { image: '/foto2.JPG', location: 'Sabang', tag: 'Nature' },
+  { image: '/foto3.JPG', location: 'Sabang', tag: 'Nature' },
+  { image: '/foto4.JPG', location: 'Sabang', tag: 'Nature' },
+  { image: '/foto5.JPG', location: 'Jantho', tag: 'Nature' },
+  { image: '/foto6.JPG', location: 'Jantho', tag: 'Nature' },
+  { image: '/foto7.JPG', location: 'Jantho', tag: 'Nature' },
+  { image: '/foto8.JPG', location: 'Siron', tag: 'Nature' },
+  { image: '/foto9.JPG', location: 'Siron', tag: 'Nature' },
+  
 ];
 
 export default function PhotographyCarousel() {
