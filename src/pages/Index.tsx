@@ -87,7 +87,7 @@ const Index = () => {
       <div id="google_translate_element" className="hidden"></div>
 
       {/* 🌍 ANIMATED TOGGLE */}
-      <div className="fixed top-5 right-5 z-50">
+      <div className="fixed top-21 right-5 z-[9999]">
         <div className="relative flex items-center bg-white/80 dark:bg-black/70 backdrop-blur rounded-full p-1 shadow-lg w-[90px]">
 
           {/* SLIDING BACKGROUND */}

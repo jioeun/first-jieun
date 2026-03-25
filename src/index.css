@@ -275,3 +275,16 @@
 
   
 }
+
+/* HIDE GOOGLE UI */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
