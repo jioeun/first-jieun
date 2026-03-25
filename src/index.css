@@ -90,6 +90,7 @@
     --sidebar-border: 35 30% 80%;
     --sidebar-ring: 345 75% 75%;
   }
+  
 
   .dark {
     --background: 25 20% 12%;
@@ -152,6 +153,8 @@
     --sidebar-border: 25 15% 30%;
     --sidebar-ring: 345 75% 75%;
   }
+  
+  
 }
 
 @layer base {
@@ -180,6 +183,22 @@
   .bg-navbg {
     background: var(--navbg);
   }
+
+  .goog-te-banner-frame {
+    display: none !important;
+  }
+
+  .goog-te-gadget {
+    display: none !important;
+  }
+
+  body {
+    top: 0 !important;
+  }
+
+  
+
+  
 
   .bg-gradient-hero {
     background: var(--gradient-hero);
@@ -253,4 +272,6 @@
     0%, 100% { opacity: 1; }
     50% { opacity: 0.7; }
   }
+
+  
 }
