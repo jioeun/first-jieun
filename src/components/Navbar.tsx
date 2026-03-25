@@ -1,157 +1,170 @@
-import { useState, useEffect } from 'react';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { motion } from 'framer-motion'; 
+import { ArrowDown, Github, Linkedin, Youtube, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { motion, AnimatePresence } from 'framer-motion';
+import ThreeScene from './ThreeScene';
 
-interface NavbarProps {
-  isDark: boolean;
-  toggleTheme: () => void;
-}
-
-export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' },
-  ];
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
+export default function HeroSection() {
+  const scrollToAbout = () => {
+    const element = document.querySelector('#about');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsMobileMenuOpen(false);
+  };
+
+  const socialLinks = [
+    { icon: Github, href: 'https://github.com/jioeun', label: 'GitHub' },
+    { icon: Instagram, href: 'https://instagram.com/jiann_frs', label: 'Instagram' },
+  ];
+
+  const starShape = {
+    clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
   };
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-strong shadow-card' : 'bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-4 bg-navbg">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <motion.a
-            href="#home"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('#home');
-            }}
-            className="font-display text-xl md:text-2xl font-bold text-gradient cursor-pointer"
-            whileHover={{ scale: 1.05 }}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+      <ThreeScene />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+
+          {/* LEFT - FOTO */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="w-full lg:w-1/2 flex justify-start"
           >
-            Jihanfrs's Portfolio
-          </motion.a>
+            <motion.div
+              className="relative group"
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 4, repeat: Infinity }}
+            >
+              {/* GLOW */}
+              <div
+                className="absolute inset-0 blur-2xl opacity-60 
+                bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 
+                group-hover:opacity-80 transition duration-500"
+                style={starShape}
+              />
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <motion.a
-                key={item.label}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(item.href);
+              {/* BORDER */}
+              <div
+                className="absolute inset-0 border-2 border-white/20 
+                shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+                style={starShape}
+              />
+
+              {/* IMAGE */}
+              <img
+                src="/DSC00121.JPG"
+                alt="Profile"
+                className="relative w-64 h-64 md:w-80 md:h-80 object-cover 
+                shadow-xl border-4 border-white/20 z-10"
+                style={starShape}
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* RIGHT - CONTENT */}
+          <div className="w-full lg:w-1/2 text-center lg:text-left">
+            <motion.span 
+              className="inline-block px-4 py-2 rounded-full glass text-sm font-medium text-primary mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              Welcome to My Portfolio
+            </motion.span>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
+            >
+              Student
+              <br />
+              <span className="text-gradient"> Tech & Creative Enthusiast</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl"
+            >
+              I enjoy exploring technology, and art. 
+              Passionate about photography, editing, drawing, and currently learning to code.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mb-12"
+            >
+              <Button 
+                size="lg" 
+                className="rounded-full px-8 shadow-glow"
+                onClick={() => {
+                  const element = document.querySelector('#projects');
+                  if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium cursor-pointer"
-                whileHover={{ y: -2 }}
               >
-                {item.label}
-              </motion.a>
-            ))}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="rounded-full"
-            >
-              <AnimatePresence mode="wait">
-                {isDark ? (
-                  <motion.div
-                    key="sun"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                  >
-                    <Sun className="h-5 w-5" />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="moon"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                  >
-                    <Moon className="h-5 w-5" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </Button>
-          </div>
+                View Projects
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="rounded-full px-8"
+                onClick={() => {
+                  const element = document.querySelector('#contact');
+                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Contact Me
+              </Button>
+            </motion.div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="rounded-full"
+            {/* SOCIAL ICONS */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              className="flex items-center justify-center lg:justify-start gap-6"
             >
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+
+                return (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-full glass hover:shadow-glow transition-all duration-300"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label={social.label}
+                  >
+                    <Icon className="h-5 w-5 text-foreground" />
+                  </motion.a>
+                );
+              })}
+            </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-strong border-t border-border"
-          >
-            <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(item.href);
-                  }}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+      {/* SCROLL BUTTON */}
+      <motion.button
+        onClick={scrollToAbout}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-3 rounded-full glass animate-float cursor-pointer"
+        whileHover={{ scale: 1.1 }}
+        aria-label="Scroll to About"
+      >
+        <ArrowDown className="h-5 w-5 text-primary" />
+      </motion.button>
+    </section>
   );
 }
