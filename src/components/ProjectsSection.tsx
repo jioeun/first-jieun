@@ -18,7 +18,7 @@ const projects = [
     tags: ['Photo', 'Visual'],
     image: '📸',
     color: 'from-blue-500/20 to-cyan-500/20',
-    link: '#',
+    link: 'https://drive.google.com/drive/folders/155rLjPwwU_m0ylhM2ubZ5VMoKfSVXd90?usp=sharing',
   },
   {
     title: 'Editing Projects',
