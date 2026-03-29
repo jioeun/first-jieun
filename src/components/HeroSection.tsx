@@ -17,11 +17,27 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+    <section className="relative min-h-screen overflow-hidden">
+
+      {/* ✅ BACKGROUND IMAGE */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${
+            document.documentElement.classList.contains("dark")
+              ? "/bgdark.png"
+              : "/bglight.png"
+          })`,
+        }}
+      />
+
+      {/* ✅ OVERLAY (biar teks kebaca) */}
+      <div className="absolute inset-0 bg-white/40 dark:bg-black/50" />
+
       <ThreeScene />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+      <div className="container mx-auto px-4 relative z-10 flex items-center min-h-screen">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 w-full">
 
           {/* LEFT - FOTO */}
           <motion.div
@@ -147,7 +163,7 @@ export default function HeroSection() {
       {/* SCROLL BUTTON */}
       <motion.button
         onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-3 rounded-full glass animate-float cursor-pointer"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-3 rounded-full glass animate-float cursor-pointer z-10"
         whileHover={{ scale: 1.1 }}
         aria-label="Scroll to About"
       >
