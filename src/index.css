@@ -189,9 +189,6 @@
     top: 0 !important;
   }
 
-  .bg-gradient-hero {
-    background: var(--gradient-hero);
-  }
 
   .shadow-glow {
     box-shadow: var(--shadow-glow);

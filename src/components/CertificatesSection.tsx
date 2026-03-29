@@ -3,15 +3,7 @@ import { Award, ExternalLink, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const certificates = [
-  {
-    title: '1st Place Speech Competition - MARSSAL 8',
-    issuer: 'MARSSAL 8',
-    date: '2022',
-    credentialId: 'MARSSAL8-1ST-2022',
-    image: '🥇',
-    color: 'from-yellow-400/20 to-orange-400/20',
-    link: '#',
-  },
+ 
   {
     title: '2nd Place Speech Competition - COMET 1',
     issuer: 'COMET 1',
@@ -19,7 +11,7 @@ const certificates = [
     credentialId: 'COMET1-2ND-2022',
     image: '🥈',
     color: 'from-gray-400/20 to-slate-400/20',
-    link: '#',
+    link: '/comet1.jpg',
   },
   {
     title: '3rd Place Speech Competition - COMET 3',
@@ -28,16 +20,7 @@ const certificates = [
     credentialId: 'COMET3-3RD-2024',
     image: '🥉',
     color: 'from-orange-400/20 to-amber-400/20',
-    link: '#',
-  },
-  {
-    title: 'Best Student Award - MIN Model',
-    issuer: 'MIN Model',
-    date: '2022',
-    credentialId: 'MINMODEL-BEST-2022',
-    image: '🏅',
-    color: 'from-green-400/20 to-emerald-400/20',
-    link: '#',
+    link: '/comet3.jpg',
   },
   {
     title: 'Best Student Award - MTsN Model',
@@ -46,7 +29,7 @@ const certificates = [
     credentialId: 'MTSNMODEL-BEST-2025',
     image: '🎓',
     color: 'from-blue-400/20 to-indigo-400/20',
-    link: '#',
+    link: '/best-student.jpg',
   },
   {
     title: 'Head of Science & Technology Division (OSIM)',
@@ -55,7 +38,7 @@ const certificates = [
     credentialId: 'OSIM-IPTEK-CHAIR-2025',
     image: '📋',
     color: 'from-purple-400/20 to-pink-400/20',
-    link: '#',
+    link: '/osim.jpg',
   },
 ];
 
