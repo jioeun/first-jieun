@@ -30,7 +30,7 @@ const App = () => {
         <Player
           autoplay
           loop
-          src="https://lottie.host/8ad54d76-6f2a-41f3-9b93-62364473640a/aKWsMLqeno.lottie"
+          src="https://lottie.host/687e1cb6-7f1d-4000-a973-03e103ec2fbf/vLfQuW9zfi.lottie"
           style={{ height: "1000px", width: "1000px" }}
         />
       </div>
