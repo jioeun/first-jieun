@@ -6,7 +6,6 @@
 
 @layer base {
   :root {
-    /* 🌈 COLORFUL SCRAPBOOK LIGHT */
     --background: 35 70% 96%;
     --foreground: 20 25% 25%;
 
@@ -160,13 +159,29 @@
 @layer base {
   * {
     @apply border-border;
-    font-family: 'Patrick Hand', cursive; /* ✨ Semua teks scrapbook font */
+    font-family: 'Patrick Hand', cursive;
   }
 
   body {
     @apply text-foreground antialiased;
-    background-color: hsl(var(--background));
-    background-image: var(--notebook-lines), var(--color-splash);
+
+    /* ✅ BACKGROUND FOTO LIGHT MODE */
+    background-image: 
+      var(--notebook-lines),
+      var(--color-splash),
+      url('/bg-light.jpg');
+
+    background-size: auto, auto, cover;
+    background-position: top left, center, center;
+    background-repeat: repeat, no-repeat, no-repeat;
+  }
+
+  /* 🌙 BACKGROUND FOTO DARK MODE */
+  .dark body {
+    background-image: 
+      var(--notebook-lines),
+      var(--color-splash),
+      url('/bg-dark.jpg');
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -195,10 +210,6 @@
   body {
     top: 0 !important;
   }
-
-  
-
-  
 
   .bg-gradient-hero {
     background: var(--gradient-hero);
@@ -272,19 +283,4 @@
     0%, 100% { opacity: 1; }
     50% { opacity: 0.7; }
   }
-
-  
-}
-
-/* HIDE GOOGLE UI */
-.goog-te-banner-frame {
-  display: none !important;
-}
-
-.goog-te-gadget {
-  display: none !important;
-}
-
-body {
-  top: 0px !important;
 }
