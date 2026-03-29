@@ -18,7 +18,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -26,12 +26,12 @@ const App = () => {
   // 🔥 LOADING SCREEN
   if (loading) {
     return (
-      <div className="w-full h-screen flex items-center justify-center bg-black">
+      <div className="w-full h-screen flex items-center justify-center">
         <Player
           autoplay
           loop
           src="https://lottie.host/8ad54d76-6f2a-41f3-9b93-62364473640a/aKWsMLqeno.lottie"
-          style={{ height: "200px", width: "200px" }}
+          style={{ height: "1000px", width: "1000px" }}
         />
       </div>
     );
