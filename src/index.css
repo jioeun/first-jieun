@@ -89,60 +89,46 @@
     --sidebar-border: 35 30% 80%;
     --sidebar-ring: 345 75% 75%;
   }
-  
 
   .dark {
     --background: 25 20% 12%;
     --foreground: 35 40% 90%;
-
     --card: 25 20% 18%;
     --card-foreground: 35 40% 90%;
-
     --popover: 25 20% 18%;
     --popover-foreground: 35 40% 90%;
-
     --primary: 345 75% 75%;
     --primary-foreground: 25 20% 12%;
-
     --secondary: 120 30% 50%;
     --secondary-foreground: 0 0% 100%;
-
     --accent: 45 80% 65%;
     --accent-foreground: 25 20% 12%;
-
     --muted: 25 15% 30%;
     --muted-foreground: 35 20% 70%;
-
     --destructive: 0 60% 50%;
     --destructive-foreground: 0 0% 100%;
-
     --border: 25 15% 30%;
     --input: 25 15% 30%;
     --ring: 345 75% 75%;
-
     --gradient-primary: linear-gradient(
       135deg,
       hsl(var(--pink)),
       hsl(var(--purple)),
       hsl(var(--blue))
     );
-
     --gradient-hero: linear-gradient(
       180deg,
       hsl(25 20% 12%) 0%,
       hsl(25 20% 18%) 100%
     );
-
     --navbg: linear-gradient(
       180deg,
       hsl(var(--purple)) 0%,
       hsl(25 20% 12%) 100%
     );
-
     --shadow-glow: 0 0 60px hsl(var(--pink) / 0.5);
     --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.5);
     --shadow-card-hover: 0 15px 60px hsl(var(--pink) / 0.25);
-
     --sidebar-background: 25 20% 15%;
     --sidebar-foreground: 35 40% 85%;
     --sidebar-primary: 345 75% 75%;
@@ -152,8 +138,6 @@
     --sidebar-border: 25 15% 30%;
     --sidebar-ring: 345 75% 75%;
   }
-  
-  
 }
 
 @layer base {
@@ -164,19 +148,15 @@
 
   body {
     @apply text-foreground antialiased;
-
-    /* ✅ BACKGROUND FOTO LIGHT MODE */
     background-image: 
       var(--notebook-lines),
       var(--color-splash),
       url('/bg-light.jpg');
-
     background-size: auto, auto, cover;
     background-position: top left, center, center;
     background-repeat: repeat, no-repeat, no-repeat;
   }
 
-  /* 🌙 BACKGROUND FOTO DARK MODE */
   .dark body {
     background-image: 
       var(--notebook-lines),
@@ -227,10 +207,11 @@
     box-shadow: var(--shadow-card-hover);
   }
 
+  /* ✅ NAVBAR FIX */
   .nav-title {
     @apply px-4 py-1 rounded-xl shadow-card font-semibold;
-    background: white;
-    color: #4B3F3A;
+    background: hsl(var(--card));
+    color: hsl(var(--foreground));
     font-family: 'Patrick Hand', cursive;
   }
 
